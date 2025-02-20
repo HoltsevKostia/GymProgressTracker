@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymProgressTracker.Server", "GymProgressTracker.Server\GymProgressTracker.Server.csproj", "{2770D995-3AFE-4976-8AA2-B387E689AD4E}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "gymprogresstracker.client", "gymprogresstracker.client\gymprogresstracker.client.esproj", "{02B73FA2-8009-4266-BDA5-C27478B7C1F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2770D995-3AFE-4976-8AA2-B387E689AD4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2770D995-3AFE-4976-8AA2-B387E689AD4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2770D995-3AFE-4976-8AA2-B387E689AD4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2770D995-3AFE-4976-8AA2-B387E689AD4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02B73FA2-8009-4266-BDA5-C27478B7C1F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02B73FA2-8009-4266-BDA5-C27478B7C1F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02B73FA2-8009-4266-BDA5-C27478B7C1F4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{02B73FA2-8009-4266-BDA5-C27478B7C1F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02B73FA2-8009-4266-BDA5-C27478B7C1F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02B73FA2-8009-4266-BDA5-C27478B7C1F4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6240B6B8-F769-42C3-9F94-5E639F1185A7}
+	EndGlobalSection
+EndGlobal

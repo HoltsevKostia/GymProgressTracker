@@ -1,0 +1,1 @@
+E:\universityCourse3\GymProgressTracker\gymprogresstracker.client\obj\Debug\gymprogresstracker.client.esproj.CoreCompileInputs.cache
