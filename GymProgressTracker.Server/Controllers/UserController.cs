@@ -4,6 +4,8 @@ using GymProgressTracker.Server.Repositories.User;
 using GymProgressTracker.Server.Services.User;
 using GymProgressTracker.Server.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace GymProgressTracker.Server.Controllers
 {
@@ -48,6 +50,31 @@ namespace GymProgressTracker.Server.Controllers
             SetAuthCookie(result.Value.Token);
 
             return Ok(new {User =  result.Value.User});
+        }
+
+        [Authorize]
+        [HttpPost]
+        [Route("logout")]
+        public IActionResult Logout()
+        {
+            Response.Cookies.Delete("auth_token");
+            return Ok(new { success = true, message = "Logged out successfully" });
+        }
+
+        [Authorize]
+        [HttpGet]
+        [Route("profile")]
+        public async Task<IActionResult> GetProfile()
+        {
+            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
+            var user = await _userService.GetUserByIdAsync(userId);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
         }
 
         private void SetAuthCookie(string token)

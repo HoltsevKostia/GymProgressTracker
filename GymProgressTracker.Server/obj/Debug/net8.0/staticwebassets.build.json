@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kdV+B+KmXUBx7NXZ2aQJXkkH1VMFFKnDe100AZUEJdA=",
+  "Hash": "+tT52wX4UJ3nrnW4mk7Kocq/OEWZynRKHcaodbWOcP8=",
   "Source": "GymProgressTracker.Server",
   "BasePath": "_content/GymProgressTracker.Server",
   "Mode": "Default",
@@ -11,10 +11,10 @@
       "Version": 2,
       "Source": "gymprogresstracker.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
     }
   ],

@@ -3,6 +3,7 @@ using GymProgressTracker.Server.Database;
 using GymProgressTracker.Server.Mapping;
 using GymProgressTracker.Server.Repositories.Repository;
 using GymProgressTracker.Server.Repositories.User;
+using GymProgressTracker.Server.Services;
 using GymProgressTracker.Server.Services.User;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -110,6 +111,8 @@ namespace GymProgressTracker.Server
                     }
                 };
             });
+
+            builder.Services.AddScoped<TokenGenerator>();
 
             var app = builder.Build();
 

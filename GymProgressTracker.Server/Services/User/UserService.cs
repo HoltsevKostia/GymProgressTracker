@@ -32,7 +32,7 @@ namespace GymProgressTracker.Server.Services.User
 
         public async Task<(string Token, UserDTO User)?> LoginAsync(LoginUserDTO loginUserDTO)
         {
-            var user = await _userRepository.GetByEmailAndPassword(loginUserDTO.Email, loginUserDTO.Password);
+            var user = await _userRepository.GetByEmailAndPassword(loginUserDTO.Email, HashPassword(loginUserDTO.Password));
 
             if (user == null)
             {

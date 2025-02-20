@@ -10,9 +10,9 @@ namespace GymProgressTracker.Server.Mapping
         {
             CreateMap<User, UserDTO>();
 
-            CreateMap<User, AddUserDTO>();
+            CreateMap<AddUserDTO, User>();
 
-            CreateMap<User, LoginUserDTO>();
+            CreateMap<LoginUserDTO, User>();
         }
     }
 }
