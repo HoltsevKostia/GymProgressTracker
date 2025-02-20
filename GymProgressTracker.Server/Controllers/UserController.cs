@@ -36,6 +36,23 @@ namespace GymProgressTracker.Server.Controllers
             return Ok(new { User = result.Value.User });
         }
 
+        /// <summary>
+        /// Авторизація користувача
+        /// </summary>
+        /// <remarks>
+        /// **Приклад запиту:**
+        /// 
+        ///     POST /user/login
+        ///     {
+        ///        "email": "test@example.com",
+        ///        "password": "123456"
+        ///     }
+        /// 
+        /// </remarks>
+        /// <param name="userDTO">Дані для входу</param>
+        /// <returns>User</returns>
+        /// <response code="200">Успішний вхід</response>
+        /// <response code="401">Невірний логін або пароль</response>
         [HttpPost]
         [Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginUserDTO userDTO)

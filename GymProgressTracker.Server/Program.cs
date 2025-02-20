@@ -7,8 +7,10 @@ using GymProgressTracker.Server.Services;
 using GymProgressTracker.Server.Services.User;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Reflection;
 using System.Text;
 
 namespace GymProgressTracker.Server
@@ -55,6 +57,11 @@ namespace GymProgressTracker.Server
                         new string[] {}
                     }
                 });
+
+                // Додаємо підтримку XML-документації
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
 
             // Adding CORS for using front client

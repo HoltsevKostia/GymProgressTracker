@@ -172,3 +172,5 @@ E:\universityCourse3\GymProgressTracker\GymProgressTracker.Server\obj\Debug\net8
 E:\universityCourse3\GymProgressTracker\GymProgressTracker.Server\obj\Debug\net8.0\ref\GymProgressTracker.Server.dll
 E:\universityCourse3\GymProgressTracker\GymProgressTracker.Server\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 E:\universityCourse3\GymProgressTracker\GymProgressTracker.Server\obj\Debug\net8.0\GymProgressTracker.Server.sourcelink.json
+E:\universityCourse3\GymProgressTracker\GymProgressTracker.Server\bin\Debug\net8.0\GymProgressTracker.Server.xml
+E:\universityCourse3\GymProgressTracker\GymProgressTracker.Server\obj\Debug\net8.0\GymProgressTracker.Server.xml
