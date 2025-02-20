@@ -10,10 +10,12 @@ namespace GymProgressTracker.Server.Services.User
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
-        public UserService(IUserRepository userRepository, IMapper mapper)
+        private readonly TokenGenerator _tokenGenerator;
+        public UserService(IUserRepository userRepository, IMapper mapper, TokenGenerator tokenGenerator)
         {
             _userRepository = userRepository;
             _mapper = mapper;
+            _tokenGenerator = tokenGenerator;
         }
 
         public async Task<UserDTO?> GetUserByIdAsync(int id)
@@ -28,7 +30,7 @@ namespace GymProgressTracker.Server.Services.User
             return Convert.ToBase64String(sha256.ComputeHash(Encoding.UTF8.GetBytes(password)));
         }
 
-        public async Task<UserDTO> LoginAsync(LoginUserDTO loginUserDTO)
+        public async Task<(string Token, UserDTO User)?> LoginAsync(LoginUserDTO loginUserDTO)
         {
             var user = await _userRepository.GetByEmailAndPassword(loginUserDTO.Email, loginUserDTO.Password);
 
@@ -37,11 +39,12 @@ namespace GymProgressTracker.Server.Services.User
                 return null;
             }
 
+            var token = _tokenGenerator.GenerateJwtToken(user);
             var userDTO = _mapper.Map<UserDTO>(user);
-            return userDTO;
+            return (token, userDTO);
         }
 
-        public async Task<UserDTO> RegisterAsync(AddUserDTO userDTO)
+        public async Task<(string Token, UserDTO User)?> RegisterAsync(AddUserDTO userDTO)
         {
             var isEmailTaken = await _userRepository.IsEmailTaken(userDTO.Email);
             if (isEmailTaken)
@@ -54,9 +57,10 @@ namespace GymProgressTracker.Server.Services.User
 
             await _userRepository.AddAsync(user);
 
+            var token = _tokenGenerator.GenerateJwtToken(user);
             var userDTOResult = _mapper.Map<UserDTO>(user);
 
-            return userDTOResult;
+            return (token, userDTOResult);
         }
     }
 }
