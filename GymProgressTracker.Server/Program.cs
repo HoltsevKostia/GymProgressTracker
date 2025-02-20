@@ -113,6 +113,7 @@ namespace GymProgressTracker.Server
 
             var app = builder.Build();
 
+            app.UseCors();
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
